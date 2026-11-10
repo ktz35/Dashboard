@@ -200,13 +200,13 @@ function siteCard(s, isPort) {
     </div>` : ''}
     <dl class="metric"><dt>Остатки / вместимость</dt><dd>${Fmt.t(s.stock_t)} / ${Fmt.t(s.capacity_t)} т · ${Fmt.pct(fill)}</dd></dl>${meter(fill, fillClass(fill))}
     ${w ? `<ul class="weather" aria-label="Погода">
-      <li title="Температура">🌡 ${w.temp_c > 0 ? '+' : ''}${w.temp_c}°C</li>
-      <li title="Ветер и порывы" class="${w.gust_ms >= THRESHOLDS.GUST_MS ? 'bad-text' : ''}">💨 ${w.wind_ms}, порывы ${w.gust_ms} м/с</li>
-      <li title="Осадки">☁ ${esc(w.precip)}</li>
-      <li title="Видимость" class="${w.visibility_km < 1 ? 'warn-text' : ''}">👁 ${Fmt.n1(w.visibility_km)} км</li>
-      ${isPort && w.wave_m !== '' ? `<li title="Высота волны" class="${w.wave_m >= THRESHOLDS.WAVE_M ? 'bad-text' : ''}">🌊 ${Fmt.n1(w.wave_m)} м</li>` : ''}
+      <li title="Температура">${w.temp_c > 0 ? '+' : ''}${w.temp_c}°C</li>
+      <li title="Ветер и порывы" class="${w.gust_ms >= THRESHOLDS.GUST_MS ? 'bad-text' : ''}">ветер ${w.wind_ms}, порывы ${w.gust_ms} м/с</li>
+      <li title="Осадки">${esc(String(w.precip).toLowerCase())}</li>
+      <li title="Видимость" class="${w.visibility_km < 1 ? 'warn-text' : ''}">видимость ${Fmt.n1(w.visibility_km)} км</li>
+      ${isPort && w.wave_m !== '' ? `<li title="Высота волны" class="${w.wave_m >= THRESHOLDS.WAVE_M ? 'bad-text' : ''}">волна ${Fmt.n1(w.wave_m)} м</li>` : ''}
     </ul>` : ''}
-    ${warns.length ? `<ul class="warns">${warns.map(x => `<li>⚠ ${esc(x)}</li>`).join('')}</ul>` : ''}
+    ${warns.length ? `<ul class="warns">${warns.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
     ${issues.length ? `<div class="card-issues"><span class="lbl">Открытые проблемы</span><ul>${issues.map(i => `<li>${chip(i.severity)} ${esc(i.description)}</li>`).join('')}</ul></div>` : ''}
     ${s.note ? `<p class="note">${esc(s.note)}</p>` : ''}
   </article>`;
