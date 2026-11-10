@@ -1,0 +1,7 @@
+# Локальные настройки Claude
+.claude/
+
+# Системные файлы
+Thumbs.db
+desktop.ini
+.DS_Store

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Оперативный дашборд: активы и логистика</title>
+  <meta name="description" content="Ежедневная оперативная картина по логистическим активам: перевалка, план, вагоны, флот, авиарейсы, проблемы и отраслевой дайджест.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232563eb'/><rect x='7' y='16' width='4' height='9' fill='white'/><rect x='14' y='10' width='4' height='15' fill='white'/><rect x='21' y='6' width='4' height='19' fill='white'/></svg>">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#view">К содержимому раздела</a>
+  <header class="top">
+    <div class="wrap">
+      <div class="title-row">
+        <h1>Оперативный дашборд: активы и логистика</h1>
+        <span id="demo-flag" class="tag warn" hidden title="Операционные цифры выдуманы для проверки макета">Демо-данные</span>
+      </div>
+      <p id="lead" class="lead"></p>
+      <p id="asof" class="asof"></p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="kpis" class="kpis" aria-label="Ключевые показатели"></section>
+
+    <nav id="tabs" class="tabs" role="tablist" aria-label="Разделы"></nav>
+    <div id="view" class="view" role="tabpanel" tabindex="-1"></div>
+
+    <details class="about">
+      <summary>О данных и показателях</summary>
+      <div id="about-body"></div>
+    </details>
+  </main>
+
+  <footer class="wrap foot">Прототип v0.4 · данные: CSV по шаблонам PRD, раздел 5</footer>
+
+  <script src="js/core.js"></script>
+  <script src="data/sites.js"></script>
+  <script src="data/throughput.js"></script>
+  <script src="data/station_terminals.js"></script>
+  <script src="data/weather.js"></script>
+  <script src="data/routes.js"></script>
+  <script src="data/companies.js"></script>
+  <script src="data/ships.js"></script>
+  <script src="data/flights.js"></script>
+  <script src="data/wagons.js"></script>
+  <script src="data/issues.js"></script>
+  <script src="data/digest.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
